@@ -1,31 +1,32 @@
-import { useContext } from "react"
-import { ThemeContext } from "../../utils/context"
 import styled from "styled-components"
-import colors from "../../utils/style/colors"
+import kasaLogoWhite from "../../assets/kasa-logo-white.png"
 
 const FooterContainer = styled.footer`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 60px;
+    background-color: #000000;
+    padding: 30px 0;
+    margin-top: 20px;
 `
 
-const NightModeButton = styled.button`
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    color: ${colors.secondary};
+const KasaLogo = styled.img`
+    padding: 10px;
+    display: flex;
+    align-items: center;
+`
+
+const Legacy = styled.div`
+    color: white;
+    margin-top: 20px;
 `
 
 function Footer() {
-    const { toggleTheme, theme } = useContext(ThemeContext)
-
     return (
         <FooterContainer>
-            <NightModeButton onClick={() => toggleTheme()}>
-                Changer de mode : {theme === "light" ? "☀️" : "🌙"}
-            </NightModeButton>
+            <KasaLogo src={kasaLogoWhite} alt="kasa logo" />
+            <Legacy>© 2020 Kasa. All rights reserved</Legacy>
         </FooterContainer>
     )
 }

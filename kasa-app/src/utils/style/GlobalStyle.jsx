@@ -4,7 +4,7 @@ import { ThemeContext } from "../context"
 
 const StyledGlobalStyle = createGlobalStyle`
     * {
-      font-family: 'Trebuchet MS', Helvetica, sans-serif;
+      font-family: 'Montserrat', Helvetica, sans-serif;
     }
     body {
         background-color: ${({ isDarkMode }) =>

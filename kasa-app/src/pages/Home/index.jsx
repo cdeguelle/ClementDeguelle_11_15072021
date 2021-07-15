@@ -1,51 +1,49 @@
-import colors from "../../utils/style/colors"
 import styled from "styled-components"
-import { StyledLink } from '../../utils/style/Atoms'
-import HomeIllustration from '../../assets/home-illustration.svg'
+import HomeIllustration from "../../assets/Banner.png"
 
 const HomeContainer = styled.div`
-    margin: 30px;
-    background-color: ${colors.backgroundLight};
-    padding: 60px 90px;
     display: flex;
     flex-direction: row;
-    max-width: 1200px;
 `
 
 const HomeWrapper = styled.div`
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 `
 
-const LeftCol = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1;
-  ${StyledLink} {
-    max-width: 250px;
-  }
+const BannerContainer = styled.div`
+	position: relative;
+	text-align: center;
+	border-radius: 25px;
+	background-color: #000000;
 `
 
-const StyledTitle = styled.h2`
-  padding-bottom: 30px;
-  max-width: 280px;
-  line-height: 50px;
+const HomeBanner = styled.img`
+	border-radius: 25px;
+	display: flex;
+	align-items: center;
+	opacity: 0.7;
 `
-
-const Illustration = styled.img`
-  flex: 1;
+const BannerTextContent = styled.p`
+	color: white;
+	font-size: 3em;
+	font-weight: 100;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: 0;
+	width: 100%;
 `
 
 function Home() {
     return (
         <HomeWrapper>
             <HomeContainer>
-                <LeftCol>
-                    <StyledTitle>Repérez vos besoins, on s'occupe du reste, avec les meilleurs talents</StyledTitle>
-                    <StyledLink to="/survey/1" $isFullLink>Faire le test</StyledLink>
-                </LeftCol>
-                <Illustration src={HomeIllustration} />
+				<BannerContainer>
+					<HomeBanner src={HomeIllustration} />
+					<BannerTextContent>Chez vous, partout et ailleurs</BannerTextContent>
+				</BannerContainer>
             </HomeContainer>
         </HomeWrapper>
     )
