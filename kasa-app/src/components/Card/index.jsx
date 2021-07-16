@@ -1,59 +1,44 @@
 import PropTypes from "prop-types"
-import { useState } from 'react'
-import { useTheme } from '../../utils/hooks'
 import DefaultPicture from "../../assets/profile.png"
 import styled from "styled-components"
-import colors from "../../utils/style/colors"
-
-const CardLabel = styled.span`
-    color: #5843e4;
-    font-size: 22px;
-    font-weight: bold;
-`
+import { StyledLink } from '../../utils/style/Atoms'
 
 const CardImage = styled.img`
-    height: 80px;
-    width: 80px;
-    border-radius: 50%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+    height: 75%;
 `
 
 const CardTitle = styled.div`
-  color: ${({ theme }) => (theme === 'light' ? '#000000' : '#ffffff')};
-  font-size: 22px;
-  font-weight: normal;
-  align-self: center;
-  height: 25px;
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-top: 25px;
+    text-align: center;
 `
 
 const CardWrapper = styled.div`
+    position: relative;
     display: flex;
     flex-direction: column;
-    padding: 15px;
-    background-color: ${colors.backgroundLight};
-    border-radius: 30px;
-    width: 350px;
-    transition: 200ms;
-    &:hover {
-        cursor: pointer;
-        box-shadow: 2px 2px 10px #e2e3e9;
-    }
+    background: linear-gradient(45deg, #FF6060 0%, rgba(138, 130, 130, 0.418) 100%);
+    border-radius: 10px;
+    width: 340px;
+    height: 340px;
+    margin: 15px 0;
 `
 
-function Card({ label, title, picture }) {
-    const { theme } = useTheme()
-    const [isFavorite, setIsFavorite] = useState(false)
-    const star = isFavorite ? "⭐️" : ""
+function Card({ title, picture, id }) {
 
     return (
-        <CardWrapper theme={theme} onClick={() => setIsFavorite(!isFavorite)}>
-            <CardLabel theme={theme}>{label}</CardLabel>
-            <CardImage src={picture} alt="freelance" />
-            <CardTitle theme={theme}>
-                {star} {title} {star}
-            </CardTitle>
-        </CardWrapper>
+        <StyledLink to={`/location/locationID=${id}`}>
+            <CardWrapper>
+                <CardImage src={picture} alt={`location${id}`} />
+                <CardTitle>{title}</CardTitle>
+            </CardWrapper>
+        </StyledLink>
     )
 }
 

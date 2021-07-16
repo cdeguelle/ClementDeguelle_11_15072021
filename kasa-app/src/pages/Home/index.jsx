@@ -1,9 +1,11 @@
 import styled from "styled-components"
 import HomeIllustration from "../../assets/Banner.png"
+import Card from "../../components/Card"
+import logements from "../../utils/data"
 
 const HomeContainer = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 `
 
 const HomeWrapper = styled.div`
@@ -16,13 +18,17 @@ const BannerContainer = styled.div`
 	text-align: center;
 	border-radius: 25px;
 	background-color: #000000;
+	display: flex;
+	justify-content: center;
+	margin: 0 10%;
 `
 
 const HomeBanner = styled.img`
 	border-radius: 25px;
 	display: flex;
-	align-items: center;
+	justify-content: center;
 	opacity: 0.7;
+	width: 100%;
 `
 const BannerTextContent = styled.p`
 	color: white;
@@ -36,6 +42,16 @@ const BannerTextContent = styled.p`
 	width: 100%;
 `
 
+const CardContainer = styled.div`
+	border-radius: 25px;
+	background-color: #F7F7F7;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 20px 10%;
+	padding: 0 20px;
+`
+
 function Home() {
     return (
         <HomeWrapper>
@@ -44,6 +60,16 @@ function Home() {
 					<HomeBanner src={HomeIllustration} />
 					<BannerTextContent>Chez vous, partout et ailleurs</BannerTextContent>
 				</BannerContainer>
+				<CardContainer>
+				{logements.map((logement) => (
+					<Card
+						key={logement.id}
+						title={logement.title}
+						picture={logement.cover}
+						id={logement.id}
+					/>
+                ))}
+				</CardContainer>
             </HomeContainer>
         </HomeWrapper>
     )
