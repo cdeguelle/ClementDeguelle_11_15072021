@@ -31,9 +31,8 @@ const CardWrapper = styled.div`
 `
 
 function Card({ title, picture, id }) {
-
     return (
-        <StyledLink to={`/location/locationID=${id}`}>
+        <StyledLink to={`/location/${id}`}>
             <CardWrapper>
                 <CardImage src={picture} alt={`location${id}`} />
                 <CardTitle>{title}</CardTitle>

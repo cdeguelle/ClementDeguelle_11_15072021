@@ -53,6 +53,7 @@ const CardContainer = styled.div`
 `
 
 function Home() {
+	
     return (
         <HomeWrapper>
             <HomeContainer>

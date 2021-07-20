@@ -19,7 +19,7 @@ ReactDOM.render(
                 <Route exact path="/">
                     <Home />
                 </Route>
-                <Route path="/location/locationID=:id">
+                <Route path="/location/:locationId">
                     <Location />
                 </Route>
                 <Route path="/results">
