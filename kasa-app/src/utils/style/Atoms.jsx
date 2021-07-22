@@ -27,6 +27,7 @@ export const StyledLink = styled(Link)`
     text-decoration: none;
     font-size: 18px;
     text-align: center;
+    color: #FF6060;
     ${(props) =>
         props.$isFullLink &&
         `text-decoration: underline;`}

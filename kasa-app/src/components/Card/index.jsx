@@ -8,6 +8,7 @@ const CardImage = styled.img`
     border-top-right-radius: 10px;
     width: 100%;
     height: 75%;
+    object-fit: cover;
 `
 
 const CardTitle = styled.div`
