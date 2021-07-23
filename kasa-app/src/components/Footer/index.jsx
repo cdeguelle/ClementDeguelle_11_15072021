@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import kasaLogoWhite from "../../assets/kasa-logo-white.png"
+import colors from "../../utils/style/colors"
 
 const FooterContainer = styled.footer`
     display: flex;
@@ -18,7 +19,7 @@ const KasaLogo = styled.img`
 `
 
 const Legacy = styled.div`
-    color: white;
+    color: ${colors.secondary};
     margin-top: 20px;
 `
 

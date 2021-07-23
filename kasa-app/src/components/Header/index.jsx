@@ -1,12 +1,13 @@
 import { StyledLink } from '../../utils/style/Atoms'
 import styled from "styled-components"
 import kasaLogo from "../../assets/kasa-logo.png"
+import colors from '../../utils/style/colors'
 
 const NavStyle = styled.nav`
     display: flex;
     & a {
         margin-left: 50px;
-        color: #FF6060;
+        color: ${colors.primary};
     }
 `
 
@@ -27,7 +28,7 @@ function Header() {
             <KasaLogo src={kasaLogo} alt="kasa logo" />
             <NavStyle>
                 <StyledLink to="/" $isFullLink>Accueil</StyledLink>
-                <StyledLink to="/survey/1">A propos</StyledLink>
+                <StyledLink to="/about">A propos</StyledLink>
             </NavStyle>
         </HeaderStyle>
     )

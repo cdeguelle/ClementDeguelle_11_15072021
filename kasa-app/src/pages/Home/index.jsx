@@ -2,6 +2,7 @@ import styled from "styled-components"
 import HomeIllustration from "../../assets/Banner.png"
 import Card from "../../components/Card"
 import logements from "../../utils/data"
+import colors from "../../utils/style/colors"
 
 const HomeContainer = styled.div`
     display: flex;
@@ -31,7 +32,7 @@ const HomeBanner = styled.img`
 	width: 100%;
 `
 const BannerTextContent = styled.p`
-	color: white;
+	color: ${colors.secondary};
 	font-size: 3em;
 	font-weight: 100;
 	position: absolute;
@@ -44,7 +45,7 @@ const BannerTextContent = styled.p`
 
 const CardContainer = styled.div`
 	border-radius: 25px;
-	background-color: #F7F7F7;
+	background-color: ${colors.backgroundLight};
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;

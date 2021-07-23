@@ -6,6 +6,7 @@ import LeftVector from "../../assets/Vector-left.png"
 import EmptyStar from "../../assets/Empty-star.png"
 import FreeStar from "../../assets/Free-star.png"
 import UpVector from "../../assets/Vector-up.png"
+import colors from "../../utils/style/colors"
 
 const LocationWrapper = styled.div`
     display: flex;
@@ -67,13 +68,13 @@ const InfosRight = styled.div`
     margin-top: 25px;
 `
 const Title = styled.h2`
-    color: #FF6060;
+    color: ${colors.primary};
     font-size: 2em;
     margin: 25px 0 10px;
 `
 
 const Position = styled.h3`
-    color: #FF6060;
+    color: ${colors.primary};
     margin: 0;
     font-size: 1em;
     font-weight: 500;
@@ -86,8 +87,8 @@ const Tags = styled.div`
 
 const Tag = styled.div`
     border-radius: 10px;
-    background-color: #FF6060;
-    color: white;
+    background-color: ${colors.primary};
+    color: ${colors.secondary};
     padding: 5px 20px;
     margin-right: 15px;
 `
@@ -100,7 +101,7 @@ const Host = styled.div`
 `
 
 const HostName = styled.div`
-    color: #FF6060;
+    color: ${colors.primary};
     width: 80px;
 `
 
@@ -131,11 +132,11 @@ const DescriptionWrapper = styled.div`
     width: 50%;
 `
 
-const DescriptionTitle = styled.div`
+const DropdownTitle = styled.div`
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-color: #FF6060;
-    color: white;
+    background-color: ${colors.primary};
+    color: ${colors.secondary};
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -146,11 +147,11 @@ const ToogleButton = styled.img`
 `
 
 const DescriptionText = styled.div`
-    background-color: #F6F6F6;
+    background-color: ${colors.backgroundLight};
     padding: 20px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    color: #FF6060;
+    color: ${colors.primary};
     height: 200px;
     display: flex;
     align-items: center;
@@ -161,22 +162,12 @@ const EquipmentsWrapper = styled.div`
     margin-left: 75px;
 `
 
-const EquipmentsTitle = styled.div`
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    background-color: #FF6060;
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-`
-
 const EquipmentsList = styled.ul`
-    background-color: #F6F6F6;
+    background-color: ${colors.backgroundLight};
     padding: 20px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    color: #FF6060;
+    color: ${colors.primary};
     margin: 0;
     height: 200px;
     display: flex;
@@ -217,19 +208,22 @@ function Location() {
                 car.style.transform += 'translateX(' + translateX + '%)'
             }
 
-            function toogleMenu (menuId, titleId) {
+            function toogleMenu (menuId, titleId, buttonId) {
                 const menu = document.getElementById(menuId)
                 const title = document.getElementById(titleId)
+                const button = document.getElementById(buttonId)
                 if (menu.getAttribute('style') === 'display: none;') {
                     menu.style.display = 'flex'
                     title.style.borderBottomLeftRadius = 0
                     title.style.borderBottomRightRadius = 0
+                    title.style.marginBottom = 0
+                    button.style.transform = 'rotate(0)'
                 } else {
                     menu.style.display = 'none'
-                    title.style.borderBottomLeftRadius = '10px'
-                    title.style.borderBottomRightRadius = '10px'
+                    title.style.borderRadius = '10px'
+                    title.style.marginBottom = '30px'
+                    button.style.transform = 'rotate(180deg)'
                 }
-                
             }
 
             return (
@@ -269,11 +263,11 @@ function Location() {
                     </InfosWrapper>
                     <LocationBody>
                         <DescriptionWrapper>
-                            <DescriptionTitle id='description-title'>Description<ToogleButton src={UpVector} onClick={() => toogleMenu('description-menu', 'description-title')} alt='menu déroulant'/></DescriptionTitle>
+                            <DropdownTitle id='description-title'>Description<ToogleButton id='description-button' src={UpVector} onClick={() => toogleMenu('description-menu', 'description-title', 'description-button')} alt='menu déroulant'/></DropdownTitle>
                             <DescriptionText id='description-menu'>{logements[index].description}</DescriptionText>
                         </DescriptionWrapper>
                         <EquipmentsWrapper>
-                            <EquipmentsTitle id='equipments-title'>Equipements<ToogleButton src={UpVector} onClick={() => toogleMenu('equipments-list', 'equipments-title')} alt='menu déroulant'/></EquipmentsTitle>
+                            <DropdownTitle id='equipments-title'>Equipements<ToogleButton id='equipments-button' src={UpVector} onClick={() => toogleMenu('equipments-list', 'equipments-title', 'equipments-button')} alt='menu déroulant'/></DropdownTitle>
                             <EquipmentsList id='equipments-list'>
                                 {locationEquipments.map((equipment) => (
                                     <EquipmentsListItems>{equipment}</EquipmentsListItems>

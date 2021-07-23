@@ -2,6 +2,7 @@ import PropTypes from "prop-types"
 import DefaultPicture from "../../assets/profile.png"
 import styled from "styled-components"
 import { StyledLink } from '../../utils/style/Atoms'
+import colors from "../../utils/style/colors"
 
 const CardImage = styled.img`
     border-top-left-radius: 10px;
@@ -18,13 +19,14 @@ const CardTitle = styled.div`
     color: white;
     margin-top: 25px;
     text-align: center;
+    padding: 0 10px;
 `
 
 const CardWrapper = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(45deg, #FF6060 0%, rgba(138, 130, 130, 0.418) 100%);
+    background: linear-gradient(45deg, ${colors.primary} 0%, ${colors.backgroundLight} 100%);
     border-radius: 10px;
     width: 340px;
     height: 340px;

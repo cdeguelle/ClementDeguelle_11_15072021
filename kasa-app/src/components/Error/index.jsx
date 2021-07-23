@@ -12,13 +12,12 @@ const ErrorTitle = styled.h1`
     font-weight: 300;
     font-size: 18em;
     margin: 0;
-    color: #FF6060;
+    color: ${colors.primary};
 `
 
 const ErrorSubtitle = styled.h2`
     font-weight: 300;
-    color: ${colors.secondary};
-    color: #FF6060;
+    color: ${colors.primary};
 `
 
 function Error() {
