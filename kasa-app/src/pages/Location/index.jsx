@@ -196,16 +196,16 @@ function Location() {
                 width: (100/carouselPictures.length) + '%'
             }
 
-            function nextCarousel () {
+            function nextCarousel (x) {
                 const car = document.getElementById('Carousel-Wrapper')
                 const translateX = -100 / carouselPictures.length
-                car.style.transform += 'translateX(' + translateX + '%)'
+                car.style.transform += 'translateX(' + x*translateX + '%)'
             }
 
-            function prevCarousel () {
+            function prevCarousel (x) {
                 const car = document.getElementById('Carousel-Wrapper')
                 const translateX = 100 / carouselPictures.length
-                car.style.transform += 'translateX(' + translateX + '%)'
+                car.style.transform += 'translateX(' + x*translateX + '%)'
             }
 
             function toogleMenu (menuId, titleId, buttonId) {
@@ -232,8 +232,8 @@ function Location() {
                         <CarouselWrapper id={'Carousel-Wrapper'} style={widthCarousel}>
                             {carouselPictures.map((picture, index) => (
                                 <CarouselItems style={widthImage}>
-                                    {index === 0 ? ('') : (<LeftArrow src={LeftVector} onClick={() => prevCarousel()} />)}
-                                    {index === carouselPictures.length-1 ? ('') : (<RightArrow src={RightVector} onClick={() => nextCarousel()} />)}
+                                    {index === 0 ? (<LeftArrow src={LeftVector} onClick={() => nextCarousel(carouselPictures.length-1)} />) : (<LeftArrow src={LeftVector} onClick={() => prevCarousel(1)} />)}
+                                    {index === carouselPictures.length-1 ? (<RightArrow src={RightVector} onClick={() => prevCarousel(carouselPictures.length-1)} />) : (<RightArrow src={RightVector} onClick={() => nextCarousel(1)} />)}
                                     <CarouselImg key={`caroussel-picture-${index}`} src={picture} />
                                 </CarouselItems>
                             ))}
