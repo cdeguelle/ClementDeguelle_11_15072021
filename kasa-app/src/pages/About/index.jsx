@@ -71,15 +71,21 @@ function About() {
         <AboutWrapper>
 			<AboutBanner src={AboutIllustration} />
             <AboutTitle id='fiability-title'>Fiabilité<ToogleButton id='fiability-button' src={DownVector} onClick={() => toogleMenu('fiability-menu', 'fiability-title', 'fiability-button')} alt='menu déroulant'/></AboutTitle>
-            <AboutText id='fiability-menu'></AboutText>
+            <AboutText id='fiability-menu'>
+                Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes.
+            </AboutText>
             <AboutTitle id='respect-title'>Respect<ToogleButton id='respect-button' src={DownVector} onClick={() => toogleMenu('respect-menu', 'respect-title', 'respect-button')} alt='menu déroulant'/></AboutTitle>
             <AboutText id='respect-menu'>
                 La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.
             </AboutText>
             <AboutTitle id='service-title'>Service<ToogleButton id='service-button' src={DownVector} onClick={() => toogleMenu('service-menu', 'service-title', 'service-button')} alt='menu déroulant'/></AboutTitle>
-            <AboutText id='service-menu'></AboutText>
+            <AboutText id='service-menu'>
+                Nos équipes se tiennent à votre disposition pour vous fournir une expérience parfaite. N'hésitez pas à nous contacter si vous avez la moindre question.
+            </AboutText>
             <AboutTitle id='responsability-title'>Responsabilité<ToogleButton id='responsability-button' src={DownVector} onClick={() => toogleMenu('responsability-menu', 'responsability-title', 'responsability-button')} alt='menu déroulant'/></AboutTitle>
-            <AboutText id='responsability-menu'></AboutText>
+            <AboutText id='responsability-menu'>
+                La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.
+            </AboutText>
         </AboutWrapper>
     )
 }
