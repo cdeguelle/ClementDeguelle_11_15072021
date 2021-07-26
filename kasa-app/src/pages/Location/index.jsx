@@ -133,8 +133,7 @@ const DescriptionWrapper = styled.div`
 `
 
 const DropdownTitle = styled.div`
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-radius: 10px;
     background-color: ${colors.primary};
     color: ${colors.secondary};
     padding: 10px 20px;
@@ -153,7 +152,7 @@ const DescriptionText = styled.div`
     border-bottom-right-radius: 10px;
     color: ${colors.primary};
     height: 200px;
-    display: flex;
+    display: none;
     align-items: center;
 `
 
@@ -170,7 +169,7 @@ const EquipmentsList = styled.ul`
     color: ${colors.primary};
     margin: 0;
     height: 200px;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
 `
@@ -212,17 +211,17 @@ function Location() {
                 const menu = document.getElementById(menuId)
                 const title = document.getElementById(titleId)
                 const button = document.getElementById(buttonId)
-                if (menu.getAttribute('style') === 'display: none;') {
+                if (!menu.getAttribute('style') || menu.getAttribute('style') === 'display: none;') {
                     menu.style.display = 'flex'
                     title.style.borderBottomLeftRadius = 0
                     title.style.borderBottomRightRadius = 0
                     title.style.marginBottom = 0
-                    button.style.transform = 'rotate(0)'
+                    button.style.transform = 'rotate(180deg)'
                 } else {
                     menu.style.display = 'none'
                     title.style.borderRadius = '10px'
                     title.style.marginBottom = '30px'
-                    button.style.transform = 'rotate(180deg)'
+                    button.style.transform = 'rotate(0)'
                 }
             }
 
