@@ -1,8 +1,8 @@
 import PropTypes from "prop-types"
 import DefaultPicture from "../../assets/profile.png"
 import styled from "styled-components"
-import { StyledLink } from '../../utils/style/Atoms'
 import colors from "../../utils/style/colors"
+import { Link } from "react-router-dom"
 
 const CardImage = styled.img`
     border-top-left-radius: 10px;
@@ -31,6 +31,24 @@ const CardWrapper = styled.div`
     width: 340px;
     height: 340px;
     margin: 15px 0;
+    @media (max-width: 426px) {
+		width: 100%;
+	}
+`
+
+const StyledLink = styled(Link)`
+    padding: 10px 15px;
+    color: #8186a0;
+    text-decoration: none;
+    font-size: 18px;
+    text-align: center;
+    color: #FF6060;
+    ${(props) =>
+        props.$isFullLink &&
+        `text-decoration: underline;`}
+    @media (max-width: 426px) {
+		padding: 0;
+	}
 `
 
 function Card({ title, picture, id }) {

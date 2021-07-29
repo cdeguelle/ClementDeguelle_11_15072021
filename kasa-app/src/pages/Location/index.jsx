@@ -19,6 +19,9 @@ const BannerCarousel = styled.div`
     margin-top: 10px;
     width: 80%;
     overflow: hidden;
+    @media (max-width: 426px) {
+		width: 90%;
+	}
 `
 
 const CarouselWrapper = styled.figure`
@@ -55,6 +58,10 @@ const InfosWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     width: 80%;
+    @media (max-width: 426px) {
+		flex-direction: column;
+        width: 90%;
+	}
 `
 
 const InfosLeft = styled.div`
@@ -66,6 +73,11 @@ const InfosRight = styled.div`
     display: flex;
     flex-direction: column;
     margin-top: 25px;
+    @media (max-width: 426px) {
+		flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+	}
 `
 const Title = styled.h2`
     color: ${colors.primary};
@@ -98,6 +110,9 @@ const Host = styled.div`
     align-items: center;
     justify-content: flex-end;
     margin-bottom: 20px;
+    @media (max-width: 426px) {
+		margin: 0;
+	}
 `
 
 const HostName = styled.div`
@@ -119,6 +134,10 @@ const Rating = styled.div`
 
 const Star = styled.img`
     margin-left: 10px;
+    @media (max-width: 426px) {
+		width: 15px;
+        height: 15px;
+	}
 `
 
 const LocationBody = styled.div`
@@ -126,10 +145,18 @@ const LocationBody = styled.div`
     justify-content: space-between;
     width: 80%;
     margin-top: 25px;
+    @media (max-width: 426px) {
+		width: 90%;
+        flex-direction: column;
+	}
 `
 
 const DescriptionWrapper = styled.div`
     width: 50%;
+    @media (max-width: 426px) {
+		margin-bottom: 20px;
+        width: 100%;
+	}
 `
 
 const DropdownTitle = styled.div`
@@ -159,6 +186,10 @@ const DescriptionText = styled.div`
 const EquipmentsWrapper = styled.div`
     width: 50%;
     margin-left: 75px;
+    @media (max-width: 426px) {
+		margin-left: 0;
+        width: 100%;
+	}
 `
 
 const EquipmentsList = styled.ul`
@@ -220,7 +251,6 @@ function Location() {
                 } else {
                     menu.style.display = 'none'
                     title.style.borderRadius = '10px'
-                    title.style.marginBottom = '30px'
                     button.style.transform = 'rotate(0)'
                 }
             }

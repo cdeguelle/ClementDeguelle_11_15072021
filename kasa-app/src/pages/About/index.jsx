@@ -16,6 +16,14 @@ const AboutBanner = styled.img`
 	justify-content: center;
     width: 80%;
     margin-bottom: 30px;
+    @media (max-width: 426px) {
+		height: 220px;
+		margin: 0;
+		width: 90%;
+        margin-bottom: 20px;
+        object-fit: cover;
+        object-position: right bottom;
+	}
 `
 
 const AboutTitle = styled.div`
@@ -25,12 +33,24 @@ const AboutTitle = styled.div`
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 60%;
+    font-size: 1.5em;
     margin-bottom: 30px;
+    @media (max-width: 426px) {
+        width: 80%;
+        font-size: 1em;
+    }
 `
 
 const ToogleButton = styled.img`
     cursor: pointer;
+    width: 30px;
+    height: 20px;
+    @media (max-width: 426px) {
+        height: 15px;
+        width: 25px;
+    }
 `
 
 const AboutText = styled.div`
@@ -45,6 +65,10 @@ const AboutText = styled.div`
     margin-bottom: 30px;
     width: 60%;
     font-size: 1.5em;
+    @media (max-width: 426px) {
+        font-size: 0.8em;
+        width: 80%;
+    }
 `
 
 function About() {
@@ -69,7 +93,7 @@ function About() {
 	
     return (
         <AboutWrapper>
-			<AboutBanner src={AboutIllustration} />
+            <AboutBanner src={AboutIllustration} />
             <AboutTitle id='fiability-title'>Fiabilité<ToogleButton id='fiability-button' src={DownVector} onClick={() => toogleMenu('fiability-menu', 'fiability-title', 'fiability-button')} alt='menu déroulant'/></AboutTitle>
             <AboutText id='fiability-menu'>
                 Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes.

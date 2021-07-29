@@ -8,6 +8,10 @@ const NavStyle = styled.nav`
     & a {
         margin-left: 50px;
         color: ${colors.primary};
+        @media (max-width: 426px) {
+            margin-left: 5px;
+            font-size: 1em;
+        }
     }
 `
 
@@ -16,10 +20,17 @@ const HeaderStyle = styled.div`
     align-items: center;
     justify-content: space-between;
     margin: 15px 10%;
+    @media (max-width: 426px) {
+        margin: 15px 5%;
+    }
 `
 
 const KasaLogo = styled.img`
     padding: 10px;
+    @media (max-width: 426px) {
+        width: 150px;
+        padding: 0;
+    }
 `
 
 function Header() {

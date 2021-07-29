@@ -7,11 +7,17 @@ import colors from "../../utils/style/colors"
 const HomeContainer = styled.div`
     display: flex;
     flex-direction: column;
+	@media (max-width: 426px) {
+		align-items: center;
+	}
 `
 
 const HomeWrapper = styled.div`
     display: flex;
     justify-content: center;
+	@media (max-width: 426px) {
+		align-items: center;
+	}
 `
 
 const BannerContainer = styled.div`
@@ -22,6 +28,11 @@ const BannerContainer = styled.div`
 	display: flex;
 	justify-content: center;
 	margin: 0 10%;
+	@media (max-width: 426px) {
+		height: 110px;
+		margin: 0;
+		width: 90%;
+	}
 `
 
 const HomeBanner = styled.img`
@@ -41,6 +52,11 @@ const BannerTextContent = styled.p`
 	transform: translate(-50%, -50%);
 	margin: 0;
 	width: 100%;
+	@media (max-width: 426px) {
+		font-size: 1.5em;
+		text-align: left;
+		margin-left: 15px;
+	}
 `
 
 const CardContainer = styled.div`
@@ -51,6 +67,13 @@ const CardContainer = styled.div`
 	justify-content: space-between;
 	margin: 20px 10%;
 	padding: 0 20px;
+	@media (max-width: 426px) {
+		flex-direction: column;
+		background-color: white;
+		padding: 0;
+		margin: 20px 0;
+		width: 90%;
+	}
 `
 
 function Home() {
@@ -60,7 +83,11 @@ function Home() {
             <HomeContainer>
 				<BannerContainer>
 					<HomeBanner src={HomeIllustration} />
-					<BannerTextContent>Chez vous, partout et ailleurs</BannerTextContent>
+					{window.matchMedia("(min-width: 426px)").matches ? (
+						<BannerTextContent>Chez vous, partout et ailleurs</BannerTextContent>
+					) : (
+						<BannerTextContent>Chez vous,<br /> partout et ailleurs</BannerTextContent>
+					)}
 				</BannerContainer>
 				<CardContainer>
 				{logements.map((logement) => (
