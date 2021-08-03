@@ -45,6 +45,11 @@ const RightArrow = styled.img`
     top: 40%;
     right: 20px;
     cursor: pointer;
+    @media (max-width: 426px) {
+        width: 12px;
+        height: 20px;
+        top: 50%;
+    }
 `
 
 const LeftArrow = styled.img`
@@ -52,6 +57,11 @@ const LeftArrow = styled.img`
     top: 40%;
     left: 20px;
     cursor: pointer;
+    @media (max-width: 426px) {
+        width: 12px;
+        height: 20px;
+        top: 50%;
+    }
 `
 
 const InfosWrapper = styled.div`
@@ -95,6 +105,9 @@ const Position = styled.h3`
 const Tags = styled.div`
     display: flex;
     margin-top: 20px;
+    @media (max-width: 426px) {
+        flex-wrap: wrap;
+    }
 `
 
 const Tag = styled.div`
@@ -103,6 +116,9 @@ const Tag = styled.div`
     color: ${colors.secondary};
     padding: 5px 20px;
     margin-right: 15px;
+    @media (max-width: 426px) {
+        margin-bottom: 15px;
+    }
 `
 
 const Host = styled.div`
@@ -145,6 +161,7 @@ const LocationBody = styled.div`
     justify-content: space-between;
     width: 80%;
     margin-top: 25px;
+    margin-bottom: 30px;
     @media (max-width: 426px) {
 		width: 90%;
         flex-direction: column;
@@ -181,6 +198,9 @@ const DescriptionText = styled.div`
     height: 200px;
     display: none;
     align-items: center;
+    @media (max-width: 426px) {
+        min-height: 100px;
+    }
 `
 
 const EquipmentsWrapper = styled.div`
@@ -203,6 +223,9 @@ const EquipmentsList = styled.ul`
     display: none;
     flex-direction: column;
     justify-content: center;
+    @media (max-width: 426px) {
+        height: 100px;
+    }
 `
 
 const EquipmentsListItems = styled.li`
@@ -261,8 +284,8 @@ function Location() {
                         <CarouselWrapper id={'Carousel-Wrapper'} style={widthCarousel}>
                             {carouselPictures.map((picture, index) => (
                                 <CarouselItems style={widthImage}>
-                                    {index === 0 ? (<LeftArrow src={LeftVector} onClick={() => nextCarousel(carouselPictures.length-1)} />) : (<LeftArrow src={LeftVector} onClick={() => prevCarousel(1)} />)}
-                                    {index === carouselPictures.length-1 ? (<RightArrow src={RightVector} onClick={() => prevCarousel(carouselPictures.length-1)} />) : (<RightArrow src={RightVector} onClick={() => nextCarousel(1)} />)}
+                                    {carouselPictures.length === 1 ? ('') : index === 0 ? (<LeftArrow src={LeftVector} onClick={() => nextCarousel(carouselPictures.length-1)} />) : (<LeftArrow src={LeftVector} onClick={() => prevCarousel(1)} />)}
+                                    {carouselPictures.length === 1 ? ('') : index === carouselPictures.length-1 ? (<RightArrow src={RightVector} onClick={() => prevCarousel(carouselPictures.length-1)} />) : (<RightArrow src={RightVector} onClick={() => nextCarousel(1)} />)}
                                     <CarouselImg key={`caroussel-picture-${index}`} src={picture} />
                                 </CarouselItems>
                             ))}

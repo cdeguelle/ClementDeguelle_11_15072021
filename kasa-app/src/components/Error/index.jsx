@@ -29,10 +29,16 @@ const ErrorSubtitle = styled.h2`
 `
 
 function Error() {
+    const isMobile = window.matchMedia('(max-width: 600px)').matches
+
     return (
         <ErrorWrapper>
             <ErrorTitle>404</ErrorTitle>
-            <ErrorSubtitle>Oups! La page que<br /> vous demandez n'existe pas.</ErrorSubtitle>
+            {isMobile ? (
+                <ErrorSubtitle>Oups! La page que<br /> vous demandez n'existe pas.</ErrorSubtitle>
+            ) : (
+                <ErrorSubtitle>Oups! La page que vous demandez n'existe pas.</ErrorSubtitle>
+            )}
             <StyledLink to="/" $isFullLink>Retourner sur la page d'acceuil</StyledLink>
         </ErrorWrapper>
     )

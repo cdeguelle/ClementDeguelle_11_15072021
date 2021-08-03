@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import AboutIllustration from "../../assets/About-banner.png"
+import AboutSmartphoneIllustration from "../../assets/About-banner-smartphone.png"
 import DownVector from "../../assets/Vector-down.png"
 import colors from "../../utils/style/colors"
 
@@ -22,7 +23,6 @@ const AboutBanner = styled.img`
 		width: 90%;
         margin-bottom: 20px;
         object-fit: cover;
-        object-position: right bottom;
 	}
 `
 
@@ -72,6 +72,7 @@ const AboutText = styled.div`
 `
 
 function About() {
+    const isMobile = window.matchMedia('(max-width: 600px)').matches
 
     function toogleMenu (menuId, titleId, buttonId) {
         const menu = document.getElementById(menuId)
@@ -93,7 +94,11 @@ function About() {
 	
     return (
         <AboutWrapper>
-            <AboutBanner src={AboutIllustration} />
+            {isMobile ? (
+                <AboutBanner src={AboutSmartphoneIllustration} />
+            ) : (
+                <AboutBanner src={AboutIllustration} />
+            )}
             <AboutTitle id='fiability-title'>Fiabilité<ToogleButton id='fiability-button' src={DownVector} onClick={() => toogleMenu('fiability-menu', 'fiability-title', 'fiability-button')} alt='menu déroulant'/></AboutTitle>
             <AboutText id='fiability-menu'>
                 Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes.

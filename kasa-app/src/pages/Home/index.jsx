@@ -77,16 +77,17 @@ const CardContainer = styled.div`
 `
 
 function Home() {
+	const isMobile = window.matchMedia('(max-width: 600px)').matches
 	
     return (
         <HomeWrapper>
             <HomeContainer>
 				<BannerContainer>
 					<HomeBanner src={HomeIllustration} />
-					{window.matchMedia("(min-width: 426px)").matches ? (
-						<BannerTextContent>Chez vous, partout et ailleurs</BannerTextContent>
+					{isMobile ? (
+						<BannerTextContent>Chez vous, <br />partout et ailleurs</BannerTextContent>
 					) : (
-						<BannerTextContent>Chez vous,<br /> partout et ailleurs</BannerTextContent>
+						<BannerTextContent>Chez vous, partout et ailleurs</BannerTextContent>
 					)}
 				</BannerContainer>
 				<CardContainer>
