@@ -2,6 +2,7 @@ import { StyledLink } from '../../utils/style/Atoms'
 import styled from "styled-components"
 import kasaLogo from "../../assets/kasa-logo.png"
 import colors from '../../utils/style/colors'
+import { useState } from 'react'
 
 const NavStyle = styled.nav`
     display: flex;
@@ -34,12 +35,15 @@ const KasaLogo = styled.img`
 `
 
 function Header() {
+    const [isHomeCurrentPage, setIsHomeCurrentPage] = useState(true)
+    const [isAboutCurrentPage, setIsAboutCurrentPage] = useState(false)
+
     return (
         <HeaderStyle>
             <KasaLogo src={kasaLogo} alt="kasa logo" />
             <NavStyle>
-                <StyledLink to="/" $isFullLink>Accueil</StyledLink>
-                <StyledLink to="/about">A propos</StyledLink>
+                {isHomeCurrentPage ? (<StyledLink to="/" $isFullLink onClick={() => {setIsHomeCurrentPage(true); setIsAboutCurrentPage(false)}}>Accueil</StyledLink>) : (<StyledLink to="/" onClick={() => {setIsHomeCurrentPage(true); setIsAboutCurrentPage(false)}}>Accueil</StyledLink>)}
+                {isAboutCurrentPage ? (<StyledLink to="/about" $isFullLink onClick={() => {setIsAboutCurrentPage(true); setIsHomeCurrentPage(false)}}>A propos</StyledLink>) : (<StyledLink to="/about" onClick={() => {setIsAboutCurrentPage(true); setIsHomeCurrentPage(false)}}>A propos</StyledLink>)}
             </NavStyle>
         </HeaderStyle>
     )

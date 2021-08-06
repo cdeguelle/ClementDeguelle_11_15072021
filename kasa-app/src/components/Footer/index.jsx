@@ -10,6 +10,9 @@ const FooterContainer = styled.footer`
     background-color: #000000;
     padding: 30px 0;
     margin-top: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 `
 
 const KasaLogo = styled.img`
@@ -18,7 +21,7 @@ const KasaLogo = styled.img`
     align-items: center;
 `
 
-const Legacy = styled.div`
+const Legacy = styled.p`
     color: ${colors.secondary};
     margin-top: 20px;
 `

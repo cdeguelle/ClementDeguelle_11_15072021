@@ -13,6 +13,7 @@ const LocationWrapper = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding-bottom: 200px;
 `
 
 const BannerCarousel = styled.div`

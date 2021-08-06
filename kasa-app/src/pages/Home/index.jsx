@@ -15,6 +15,7 @@ const HomeContainer = styled.div`
 const HomeWrapper = styled.div`
     display: flex;
     justify-content: center;
+	padding-bottom: 200px;
 	@media (max-width: 426px) {
 		align-items: center;
 	}
