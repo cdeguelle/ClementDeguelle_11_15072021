@@ -280,13 +280,13 @@ function Location() {
             }
 
             return (
-                <LocationWrapper>
+                <LocationWrapper key={`${logements[index].id}`}>
                     <BannerCarousel>
                         <CarouselWrapper id={'Carousel-Wrapper'} style={widthCarousel}>
                             {carouselPictures.map((picture, index) => (
-                                <CarouselItems style={widthImage}>
-                                    {carouselPictures.length === 1 ? ('') : index === 0 ? (<LeftArrow src={LeftVector} onClick={() => nextCarousel(carouselPictures.length-1)} />) : (<LeftArrow src={LeftVector} onClick={() => prevCarousel(1)} />)}
-                                    {carouselPictures.length === 1 ? ('') : index === carouselPictures.length-1 ? (<RightArrow src={RightVector} onClick={() => prevCarousel(carouselPictures.length-1)} />) : (<RightArrow src={RightVector} onClick={() => nextCarousel(1)} />)}
+                                <CarouselItems key={`caroussel-${index}`} style={widthImage}>
+                                    {carouselPictures.length === 1 ? ('') : index === 0 ? (<LeftArrow key={`left-arrow-${index}`}  src={LeftVector} onClick={() => nextCarousel(carouselPictures.length-1)} />) : (<LeftArrow key={`left-arrow-${index}`} src={LeftVector} onClick={() => prevCarousel(1)} />)}
+                                    {carouselPictures.length === 1 ? ('') : index === carouselPictures.length-1 ? (<RightArrow key={`right-arrow-${index}`} src={RightVector} onClick={() => prevCarousel(carouselPictures.length-1)} />) : (<RightArrow key={`right-arrow-${index}`} src={RightVector} onClick={() => nextCarousel(1)} />)}
                                     <CarouselImg key={`caroussel-picture-${index}`} src={picture} />
                                 </CarouselItems>
                             ))}
@@ -323,7 +323,7 @@ function Location() {
                             <DropdownTitle id='equipments-title'>Equipements<ToogleButton id='equipments-button' src={UpVector} onClick={() => toogleMenu('equipments-list', 'equipments-title', 'equipments-button')} alt='menu déroulant'/></DropdownTitle>
                             <EquipmentsList id='equipments-list'>
                                 {locationEquipments.map((equipment) => (
-                                    <EquipmentsListItems>{equipment}</EquipmentsListItems>
+                                    <EquipmentsListItems key={`equipment-${equipment}`}>{equipment}</EquipmentsListItems>
                                 ))}
                             </EquipmentsList>
                         </EquipmentsWrapper>
