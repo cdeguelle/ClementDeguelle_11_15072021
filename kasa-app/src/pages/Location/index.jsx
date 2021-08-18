@@ -5,8 +5,9 @@ import RightVector from "../../assets/Vector-right.png"
 import LeftVector from "../../assets/Vector-left.png"
 import EmptyStar from "../../assets/Empty-star.png"
 import FreeStar from "../../assets/Free-star.png"
-import UpVector from "../../assets/Vector-up.png"
 import colors from "../../utils/style/colors"
+import Collapse from "../../components/Collapse"
+import "../../utils/style/Location.css"    
 
 const LocationWrapper = styled.div`
     display: flex;
@@ -169,66 +170,6 @@ const LocationBody = styled.div`
 	}
 `
 
-const DescriptionWrapper = styled.div`
-    width: 50%;
-    @media (max-width: 426px) {
-		margin-bottom: 20px;
-        width: 100%;
-	}
-`
-
-const DropdownTitle = styled.div`
-    border-radius: 10px;
-    background-color: ${colors.primary};
-    color: ${colors.secondary};
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-`
-
-const ToogleButton = styled.img`
-    cursor: pointer;
-`
-
-const DescriptionText = styled.div`
-    background-color: ${colors.backgroundLight};
-    padding: 20px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    color: ${colors.primary};
-    height: 200px;
-    display: none;
-    align-items: center;
-    @media (max-width: 426px) {
-        min-height: 100px;
-    }
-`
-
-const EquipmentsWrapper = styled.div`
-    width: 50%;
-    margin-left: 75px;
-    @media (max-width: 426px) {
-		margin-left: 0;
-        width: 100%;
-	}
-`
-
-const EquipmentsList = styled.ul`
-    background-color: ${colors.backgroundLight};
-    padding: 20px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    color: ${colors.primary};
-    margin: 0;
-    height: 200px;
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    @media (max-width: 426px) {
-        height: 100px;
-    }
-`
-
 const EquipmentsListItems = styled.li`
     list-style: none;
 `
@@ -260,23 +201,6 @@ function Location() {
                 const car = document.getElementById('Carousel-Wrapper')
                 const translateX = 100 / carouselPictures.length
                 car.style.transform += 'translateX(' + x*translateX + '%)'
-            }
-
-            function toogleMenu (menuId, titleId, buttonId) {
-                const menu = document.getElementById(menuId)
-                const title = document.getElementById(titleId)
-                const button = document.getElementById(buttonId)
-                if (!menu.getAttribute('style') || menu.getAttribute('style') === 'display: none;') {
-                    menu.style.display = 'flex'
-                    title.style.borderBottomLeftRadius = 0
-                    title.style.borderBottomRightRadius = 0
-                    title.style.marginBottom = 0
-                    button.style.transform = 'rotate(180deg)'
-                } else {
-                    menu.style.display = 'none'
-                    title.style.borderRadius = '10px'
-                    button.style.transform = 'rotate(0)'
-                }
             }
 
             return (
@@ -315,18 +239,28 @@ function Location() {
                         </InfosRight>
                     </InfosWrapper>
                     <LocationBody>
-                        <DescriptionWrapper>
-                            <DropdownTitle id='description-title'>Description<ToogleButton id='description-button' src={UpVector} onClick={() => toogleMenu('description-menu', 'description-title', 'description-button')} alt='menu déroulant'/></DropdownTitle>
-                            <DescriptionText id='description-menu'>{logements[index].description}</DescriptionText>
-                        </DescriptionWrapper>
-                        <EquipmentsWrapper>
-                            <DropdownTitle id='equipments-title'>Equipements<ToogleButton id='equipments-button' src={UpVector} onClick={() => toogleMenu('equipments-list', 'equipments-title', 'equipments-button')} alt='menu déroulant'/></DropdownTitle>
-                            <EquipmentsList id='equipments-list'>
-                                {locationEquipments.map((equipment) => (
-                                    <EquipmentsListItems key={`equipment-${equipment}`}>{equipment}</EquipmentsListItems>
-                                ))}
-                            </EquipmentsList>
-                        </EquipmentsWrapper>
+                        <Collapse
+                            title='Description'
+                            content={logements[index].description}
+                            menuId='description-menu'
+                            titleId='description-title'
+                            buttonId='description-button'
+                            className='description-wrapper'
+                            contentClassName='description-collapse-content'
+                            titleClassName='location-collapse-title'
+                        />
+                        <Collapse
+                            title='Equipements'
+                            content={locationEquipments.map((equipment) => (
+                                <EquipmentsListItems key={`equipment-${equipment}`}>{equipment}</EquipmentsListItems>
+                            ))}
+                            menuId='equipments-menu'
+                            titleId='equipments-title'
+                            buttonId='equipments-button'
+                            className='equipments-wrapper'
+                            contentClassName='equipments-collapse-content'
+                            titleClassName='location-collapse-title'
+                        />
                     </LocationBody>
                 </LocationWrapper>
             )

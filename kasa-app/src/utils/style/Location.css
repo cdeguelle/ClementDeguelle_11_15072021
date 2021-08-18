@@ -1,0 +1,61 @@
+.description-wrapper {
+    width: 50%;
+}
+
+.equipments-wrapper {
+    width: 50%;
+    margin-left: 75px;
+}
+
+.location-collapse-title {
+	border-radius: 10px;
+    background-color: #FF6060;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+.description-collapse-content {
+    background-color: #F6F6F6;
+    padding: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: #FF6060;
+    height: 200px;
+    display: none;
+    align-items: center;
+}
+
+.equipments-collapse-content {
+    background-color: #F6F6F6;
+    padding: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: #FF6060;
+    margin: 0;
+    height: 200px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: 426px) {
+    .description-wrapper {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    .equipments-wrapper {
+        margin-left: 0;
+        width: 100%;
+    }
+	#description-menu {
+        min-height: 100px;
+    }
+    .equipments-collapse-content {
+        height: 100px;
+    }
+}
