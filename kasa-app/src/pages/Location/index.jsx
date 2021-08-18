@@ -8,6 +8,7 @@ import FreeStar from "../../assets/Free-star.png"
 import colors from "../../utils/style/colors"
 import Collapse from "../../components/Collapse"
 import "../../utils/style/Location.css"    
+import Error from "../../components/Error"
 
 const LocationWrapper = styled.div`
     display: flex;
@@ -176,6 +177,11 @@ const EquipmentsListItems = styled.li`
 
 function Location() {
     const { locationId } = useParams()
+    const ids = []
+    logements.map((logement) => (
+        ids.push(logement.id)
+    ))
+    console.log(ids)
 
     for (let index = 0; index < logements.length; index++) {
         if (logements[index].id === locationId) {
@@ -264,6 +270,9 @@ function Location() {
                     </LocationBody>
                 </LocationWrapper>
             )
+        }
+        if (!ids.includes(locationId)) {
+            return (<Error />)
         }
     }
 }
