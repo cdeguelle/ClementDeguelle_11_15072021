@@ -6,6 +6,7 @@ const ErrorWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 250px;
 `
 
 const ErrorTitle = styled.h1`
