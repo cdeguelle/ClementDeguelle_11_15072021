@@ -10,9 +10,6 @@ const FooterContainer = styled.footer`
     background-color: #000000;
     padding: 30px 0;
     margin-top: 20px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
 `
 
 const KasaLogo = styled.img`

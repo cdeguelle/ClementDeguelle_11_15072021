@@ -9,7 +9,6 @@ const AboutWrapper = styled.div`
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 200px;
 `
 
 const AboutBanner = styled.img`
