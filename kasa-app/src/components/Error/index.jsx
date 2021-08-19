@@ -11,7 +11,7 @@ function Error() {
             ) : (
                 <h2 className='error-subtitle'>Oups! La page que vous demandez n'existe pas.</h2>
             )}
-            <a className='styled-link' href="/">Retourner sur la page d'acceuil</a>
+            <a className='home-link' href="/">Retourner sur la page d'acceuil</a>
         </div>
     )
 }
