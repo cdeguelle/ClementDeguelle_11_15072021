@@ -1,37 +1,12 @@
-import styled from "styled-components"
 import kasaLogoWhite from "../../assets/kasa-logo-white.png"
-import colors from "../../utils/style/colors"
-
-const FooterContainer = styled.footer`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #000000;
-    padding: 30px 0;
-    margin-top: 20px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-`
-
-const KasaLogo = styled.img`
-    padding: 10px;
-    display: flex;
-    align-items: center;
-`
-
-const Legacy = styled.p`
-    color: ${colors.secondary};
-    margin-top: 20px;
-`
+import "../../utils/style/Footer.css"
 
 function Footer() {
     return (
-        <FooterContainer>
-            <KasaLogo src={kasaLogoWhite} alt="kasa logo" />
-            <Legacy>© 2020 Kasa. All rights reserved</Legacy>
-        </FooterContainer>
+        <footer className='footer-container'>
+            <img className='kasa-logo' src={kasaLogoWhite} alt="kasa logo" />
+            <p className='legacy'>© 2020 Kasa. All rights reserved</p>
+        </footer>
     )
 }
 

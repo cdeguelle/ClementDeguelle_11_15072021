@@ -1,0 +1,25 @@
+.about-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 200px;
+}
+
+.about-banner {
+    border-radius: 25px;
+	display: flex;
+	justify-content: center;
+    width: 80%;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 426px) {
+	.about-banner {
+        height: 220px;
+		margin: 0;
+		width: 90%;
+        margin-bottom: 20px;
+        object-fit: cover;
+    }
+}

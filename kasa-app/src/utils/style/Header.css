@@ -1,0 +1,41 @@
+.nav-style {
+    display: flex;
+}
+
+.nav-style a {
+    margin-left: 50px;
+    color: #FF6060;
+}
+
+.header-style {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 10%;
+}
+
+.kasa-logo {
+    padding: 10px;
+}
+
+.styled-link {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    text-align: center;
+    color: #FF6060;
+}
+
+@media (max-width: 426px) {
+	.nav-style a {
+        margin-left: 5px;
+        font-size: 1em;
+    }
+    .header-style {
+        margin: 15px 5%;
+    }
+    .kasa-logo {
+        width: 150px;
+        padding: 0;
+    }
+}

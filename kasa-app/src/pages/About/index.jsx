@@ -1,40 +1,17 @@
-import styled from "styled-components"
 import AboutIllustration from "../../assets/About-banner.png"
 import AboutSmartphoneIllustration from "../../assets/About-banner-smartphone.png"
 import Collapse from "../../components/Collapse"
-
-const AboutWrapper = styled.div`
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 200px;
-`
-
-const AboutBanner = styled.img`
-	border-radius: 25px;
-	display: flex;
-	justify-content: center;
-    width: 80%;
-    margin-bottom: 30px;
-    @media (max-width: 426px) {
-		height: 220px;
-		margin: 0;
-		width: 90%;
-        margin-bottom: 20px;
-        object-fit: cover;
-	}
-`
+import "../../utils/style/About.css"
 
 function About() {
     const isMobile = window.matchMedia('(max-width: 600px)').matches
 	
     return (
-        <AboutWrapper>
+        <div className='about-wrapper'>
             {isMobile ? (
-                <AboutBanner src={AboutSmartphoneIllustration} />
+                <img className='about-banner' src={AboutSmartphoneIllustration} alt='mountain-landscape' />
             ) : (
-                <AboutBanner src={AboutIllustration} />
+                <img className='about-banner' src={AboutIllustration} alt='mountain-landscape' />
             )}
             <Collapse
                 title='Fiabilité'
@@ -76,7 +53,7 @@ function About() {
                 contentClassName='collapse-content'
                 titleClassName='collapse-title'
             />
-        </AboutWrapper>
+        </div>
     )
 }
 

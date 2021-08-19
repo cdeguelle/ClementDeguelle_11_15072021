@@ -1,47 +1,18 @@
-import styled from "styled-components"
-import colors from "../../utils/style/colors"
-import { StyledLink } from "../../utils/style/Atoms"
-
-const ErrorWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 250px;
-`
-
-const ErrorTitle = styled.h1`
-    font-weight: 300;
-    font-size: 18em;
-    margin: 0;
-    color: ${colors.primary};
-    @media (max-width: 426px) {
-		font-size: 6em;
-        margin-top: 180px;
-	}
-`
-
-const ErrorSubtitle = styled.h2`
-    font-weight: 300;
-    color: ${colors.primary};
-    @media (max-width: 426px) {
-		text-align: center;
-        margin-bottom: 139px;
-	}
-`
+import "../../utils/style/Error.css"
 
 function Error() {
     const isMobile = window.matchMedia('(max-width: 600px)').matches
 
     return (
-        <ErrorWrapper>
-            <ErrorTitle>404</ErrorTitle>
+        <div className='error-wrapper'>
+            <h1 className='error-title'>404</h1>
             {isMobile ? (
-                <ErrorSubtitle>Oups! La page que<br /> vous demandez n'existe pas.</ErrorSubtitle>
+                <h2 className='error-subtitle'>Oups! La page que<br /> vous demandez n'existe pas.</h2>
             ) : (
-                <ErrorSubtitle>Oups! La page que vous demandez n'existe pas.</ErrorSubtitle>
+                <h2 className='error-subtitle'>Oups! La page que vous demandez n'existe pas.</h2>
             )}
-            <StyledLink to="/" $isFullLink>Retourner sur la page d'acceuil</StyledLink>
-        </ErrorWrapper>
+            <a className='styled-link' href="/">Retourner sur la page d'acceuil</a>
+        </div>
     )
 }
 

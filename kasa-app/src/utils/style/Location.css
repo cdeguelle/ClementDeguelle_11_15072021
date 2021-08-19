@@ -1,3 +1,130 @@
+.location-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 200px;
+}
+
+.banner-carousel {
+    margin-top: 10px;
+    width: 80%;
+    overflow: hidden;
+}
+
+.carousel-wrapper {
+    display: flex;
+    margin: 0;
+}
+
+.carousel-items {
+    position: relative;
+}
+
+.carousel-img {
+    border-radius: 25px;
+	height: 400px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.right-arrow {
+    position: absolute;
+    top: 40%;
+    right: 20px;
+    cursor: pointer;
+}
+
+.left-arrow {
+    position: absolute;
+    top: 40%;
+    left: 20px;
+    cursor: pointer;
+}
+
+.infos-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.infos-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.infos-right {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+}
+
+.location-title {
+    color: #FF6060;
+    font-size: 2em;
+    margin: 25px 0 10px;
+}
+
+.location-position {
+    color: #FF6060;
+    margin: 0;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.location-tags {
+    display: flex;
+    margin-top: 20px;
+}
+
+.tag {
+    border-radius: 10px;
+    background-color: #FF6060;
+    color: white;
+    padding: 5px 20px;
+    margin-right: 15px;
+}
+
+.location-host {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.location-host-name {
+    color: #FF6060;
+    width: 80px;
+}
+
+.location-host-picture {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    margin-left: 15px;
+}
+
+.location-rating {
+    display: flex;
+    justify-content: space-between;
+}
+
+.star {
+    margin-left: 10px;
+}
+
+.location-body {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.equipments-list-items {
+    list-style: none;
+}
+
 .description-wrapper {
     width: 50%;
 }
@@ -44,6 +171,45 @@
 }
 
 @media (max-width: 426px) {
+    .banner-carousel {
+        width: 90%;
+    }
+    .right-arrow {
+        width: 12px;
+        height: 20px;
+        top: 50%;
+    }
+    .left-arrow {
+        width: 12px;
+        height: 20px;
+        top: 50%;
+    }
+    .infos-wrapper {
+        flex-direction: column;
+        width: 90%;
+    }
+    .infos-right {
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .location-tags {
+        flex-wrap: wrap;
+    }
+    .tag {
+        margin-bottom: 15px;
+    }
+    .location-host {
+        margin: 0;
+    }
+    .star {
+        width: 15px;
+        height: 15px;
+    }
+    .location-body {
+        width: 90%;
+        flex-direction: column;
+    }
     .description-wrapper {
         margin-bottom: 20px;
         width: 100%;
