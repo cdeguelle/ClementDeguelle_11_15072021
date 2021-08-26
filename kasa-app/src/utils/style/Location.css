@@ -223,4 +223,7 @@
     .equipments-collapse-content {
         height: 100px;
     }
+    .location-collapse-title {
+        font-size: 1em;
+    }
 }
