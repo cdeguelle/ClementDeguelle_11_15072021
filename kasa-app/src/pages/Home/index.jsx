@@ -1,5 +1,5 @@
 import HomeIllustration from "../../assets/Banner.png"
-import Card from "../../components/Card"
+import Card1 from "../../components/Card1"
 import logements from "../../utils/data"
 import "../../utils/style/Home.css"
 
@@ -19,7 +19,7 @@ function Home() {
 				</div>
 				<div className='card-container'>
 				{logements.map((logement) => (
-					<Card
+					<Card1
 						key={logement.id}
 						title={logement.title}
 						picture={logement.cover}

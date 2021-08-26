@@ -1,6 +1,6 @@
 import AboutIllustration from "../../assets/About-banner.png"
 import AboutSmartphoneIllustration from "../../assets/About-banner-smartphone.png"
-import Collapse from "../../components/Collapse"
+import Collapse1 from "../../components/Collapse1"
 import "../../utils/style/About.css"
 
 function About() {
@@ -13,7 +13,7 @@ function About() {
             ) : (
                 <img className='about-banner' src={AboutIllustration} alt='mountain-landscape' />
             )}
-            <Collapse
+            <Collapse1
                 title='Fiabilité'
                 content='Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes.'
                 menuId='fiability-menu'
@@ -23,7 +23,7 @@ function About() {
                 contentClassName='collapse-content'
                 titleClassName='collapse-title'
             />
-            <Collapse
+            <Collapse1
                 title='Respect'
                 content='La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.'
                 menuId='respect-menu'
@@ -33,7 +33,7 @@ function About() {
                 contentClassName='collapse-content'
                 titleClassName='collapse-title'
             />
-            <Collapse
+            <Collapse1
                 title='Service'
                 content="Nos équipes se tiennent à votre disposition pour vous fournir une expérience parfaite. N'hésitez pas à nous contacter si vous avez la moindre question."
                 menuId='service-menu'
@@ -43,7 +43,7 @@ function About() {
                 contentClassName='collapse-content'
                 titleClassName='collapse-title'
             />
-            <Collapse
+            <Collapse1
                 title='Responsabilité'
                 content="La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes."
                 menuId='responsability-menu'
